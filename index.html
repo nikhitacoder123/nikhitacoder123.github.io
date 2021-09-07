@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Nikki's Responsive Website :)</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+  <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="skeleton.css">
+    <link rel="stylesheet" href="style.css"> 
+  <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+  </head>
+  <body>
+
+    <header class="main_nav green">
+      <div class="container">
+        <div class="twelve columns">
+          <div class="logo"><a href="#">Coder Cookies</a></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div style="background-color: orange" class="twelve columns">
+        <h2 id = "typetext0"> >> Hey I am Coder Cookies</h2>
+        <h2 id = "typetext1"> >> I love computers and coding</h2>
+        <h2 id = "typetext2"> >> Check out my Projects here!!</h2>
+      </div>
+    </div>
+    <div class="container main">
+      <div class="row">
+        <div class="four columns ">
+          <a href="https://www.google.com" target="_blank"><img class="yeshover" src="https://cdn.pixabay.com/photo/2016/10/16/16/33/dual-screen-1745705_960_720.png" /></a>
+        </div>
+        <div class="four columns ">
+          <a href="https://codercookies.com/" target="_blank"><img class="yeshover" src="https://cdn.pixabay.com/photo/2017/09/25/18/56/social-media-2786261_960_720.jpg" /></a>
+        </div>
+        <div class="four columns ">
+          <a href="https://www.javascript.com/" target="_blank"><img class="yeshover" src="https://cdn.pixabay.com/photo/2016/03/27/18/54/technology-1283624_960_720.jpg" /></a>
+        </div>
+      </div>
+    </div><!--Container-->
+
+    <div class="row green">
+      <div class="container">
+        <div class="four columns">
+          <img class="avatar" src="images/coder.jpg" />
+        </div>
+        <div class="eight columns">
+          <h2 class="bio">About CoderCookies</h2>
+          <h2 style="font-size:30px"> We are a team of software engineers and passionate teachers, with a combined experience of several decades in some of the best tech companies of the world like BlackBerry, Amazon, Apple, etc. Our team boasts of well trained Code Mentors who have a wider range of experience in programming, Data Science, Machine Learning, etc. and a passion to teach. We teach in small batches using a customized tailor-to-the-learning-method approach. We inspire and encourage creativity, with a keen focus to ensure that our students get the best coding concepts, skills and learning experience. We want no kid, teen or young adult to be left behind in this Coding journey </h2>
+        </div>
+
+      </div>
+    </div><!--Row Green-->
+
+    <footer>
+    
+    <div class="row twelve columns">
+                <ul class="social">
+                    <li class="facebook"><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                    <li class="twitter"><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li class="youtube"><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+
+      <div class="row twelve columns">
+        <p class="copyright">&copy; All rights Reserved.</p>
+      </div>
+
+    </footer>
+  <script type="text/javascript">
+
+// Array that hold the three lines in the typewriter. Change according to your need
+ var allText = ["Hello, my name is Coder Cookies", "I love computers and programming!", "Check out my projects!"];
+
+// Three variables which hold the index of the character currently being displayed for the three lines
+var currentIndex0 = 0;
+var currentIndex1 = 0;
+var currentIndex2 = 0;
+
+// Get the content part of the h2 tags into three variables so they can updated
+// in functions below
+var textHeader0 = document.getElementById("typetext0");
+var textHeader1 = document.getElementById("typetext1");
+var textHeader2 = document.getElementById("typetext2");
+
+// Three variables that stores the timer Interval Handles
+// more below
+var myVar0;
+var myVar1;
+var myVar2;
+
+
+//////Typewriter
+
+// This function add0 adds the text of line each character by character until
+// the full text is added. As soon as the full text is added. It then starts a timer using setInterval inbuilt JS function, that calls the remov0 function to remove the text in the first line character by character
+
+function add0() {    
+var text =  allText[0].substring(0, currentIndex0 + 1);  // Ankit.substring(0,1) //A
+textHeader0.innerHTML = ">> " +  text;
+    currentIndex0+=1;   // currentIndex0 = currentIndex0 + 1;
+
+    if(text === allText[0]) {
+
+        clearInterval(myVar0);
+        setTimeout(function() {
+            myVar0 = setInterval(remove0, 50);
+        }, 1000);
+    }
+
+}
+
+// This function removes the text of line each character by character until
+// the full text is removed. As soon as the full text is removed. It then starts a timer using setInterval inbuilt JS function, that calls the add0 function to add the text in the first line character by character
+
+function remove0() {
+    var text =  allText[0].substring(0, currentIndex0 - 1);
+    textHeader0.innerHTML = ">> " + text;
+    currentIndex0-=1;
+   
+    if(text === "") {
+        clearInterval(myVar0);
+;
+       
+        currentIndex0 = 0
+        setTimeout(function() {
+myVar0 = setInterval(add0, 100);
+}, 200);
+
+    }
+}
+
+
+function add1() {    
+var text =  allText[1].substring(0, currentIndex1 + 1);
+textHeader1.innerHTML = ">> " +  text;
+    currentIndex1+=1;
+
+    if(text === allText[1]) {
+
+        clearInterval(myVar1);
+        setTimeout(function() {
+            myVar1 = setInterval(remove1, 50);
+        }, 1000);
+    }
+
+}
+
+function remove1() {
+    var text =  allText[1].substring(0, currentIndex1 - 1);
+    textHeader1.innerHTML = ">> " + text;
+    currentIndex1-=1;
+   
+    if(text === "") {
+        clearInterval(myVar1);
+;
+       
+        currentIndex1 = 0
+        setTimeout(function() {
+myVar1 = setInterval(add1, 100);
+}, 200);
+
+    }
+}
+
+
+function add2() {    
+var text =  allText[2].substring(0, currentIndex2 + 1);
+textHeader2.innerHTML = ">> " +  text;
+    currentIndex2+=1;
+
+    if(text === allText[2]) {
+
+        clearInterval(myVar2);
+        setTimeout(function() {
+            myVar2 = setInterval(remove2, 50);
+        }, 1000);
+    }
+
+}
+
+function remove2() {
+    var text =  allText[2].substring(0, currentIndex2 - 1);
+    textHeader2.innerHTML = ">> " + text;
+    currentIndex2-=1;
+   
+    if(text === "") {
+        clearInterval(myVar2);
+;
+       
+        currentIndex2 = 0
+        setTimeout(function() {
+myVar2 = setInterval(add2, 100);
+}, 200);
+
+    }
+}
+////// end of typewriter
+
+add0()
+remove0()
+
+add1()
+remove1()
+
+add2()
+remove2()
+
+</script>
+  </body>
+  </html>
+  <!-- the "main_nav green" class is located on line 21 in the style.css code.
+       the "container" class is located on line 31 of in the skeleton.css code.
+       the "twelve columns" class is located on line 74 in the skeleton.css code.
+       the "logo" class is located from line 25-36 in the style.css code.
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
